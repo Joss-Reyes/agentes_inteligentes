@@ -1,15 +1,16 @@
+float sex;
 class circulo{
   float x,y,saltox,saltoy,incx,incy,radio;
-  float sex;
+  
   circulo(){
     x=random(0,width);
     y=random(0,height);
-    saltox=random(0,3);
-    saltoy=random(1,3);
+    saltox=random(0,7);
+    saltoy=random(1,9);
     incx=random(-0.1,0.1);
     incy=random(-0.1,0.1);
     sex = random(2);
-    radio=60;
+    radio=10;
   }
   
   void mover(){
@@ -31,12 +32,12 @@ class circulo{
     
     mover();
     noStroke();
-    if(sex == 1){
+    if(sex >= 1){
       fill(255,255,0);
+      sex = 0;
     }else{
       fill(0,255,0);
     }
-    
     circle(x,y,radio);
   }
 }
