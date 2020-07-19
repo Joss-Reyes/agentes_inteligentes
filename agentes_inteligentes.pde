@@ -1,12 +1,14 @@
 class circulo{
   float x,y,saltox,saltoy,incx,incy,radio;
+  float sex;
   circulo(){
     x=random(0,width);
     y=random(0,height);
-    saltox=random(1,2);
-    saltoy=random(0,1);
+    saltox=random(0,3);
+    saltoy=random(1,3);
     incx=random(-0.1,0.1);
     incy=random(-0.1,0.1);
+    sex = random(2);
     radio=60;
   }
   
@@ -26,9 +28,15 @@ class circulo{
   }
   
   void draw(){
+    
     mover();
     noStroke();
-    fill(255,255,0);
+    if(sex == 1){
+      fill(255,255,0);
+    }else{
+      fill(0,255,0);
+    }
+    
     circle(x,y,radio);
   }
 }
@@ -44,6 +52,9 @@ class varioscirculos
     for(int i=0; i < n; i++)
     {
       p[i]=new circulo();
+    }
+    if(n>=150){
+      exit();
     }
     print(n);
   }
