@@ -7,7 +7,7 @@ class circulo{
     saltoy=random(0,1);
     incx=random(-0.1,0.1);
     incy=random(-0.1,0.1);
-    radio=30;
+    radio=60;
   }
   
   void mover(){
@@ -64,9 +64,9 @@ class varioscirculos
       for(int i=j+1;i < n; i++)
       {
         float distancia = sqrt( (p[j].x - p[i].x)*(p[j].x - p[i].x) + (p[j].y - p[i].y)*(p[j].y - p[i].y) );
-        if ( distancia < 30 ) {
+        if ( distancia < p[j].radio ) {
         // Colisión detectada
-          
+          c1 = new varioscirculos(n+1);
           p[j].saltox*=-1;
           p[j].saltoy*=-1;
           p[i].saltox*=-1;
@@ -81,8 +81,9 @@ static varioscirculos c1;
 static circulo cir;
 void setup()
 {
-  size(200,200);
+  size(600,600);
   c1=new varioscirculos(2);
+  
 }
 
 void draw()
