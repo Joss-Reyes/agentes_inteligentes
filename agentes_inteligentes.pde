@@ -1,7 +1,6 @@
-float sex;
 class circulo{
   float x,y,saltox,saltoy,incx,incy,radio;
-  
+  float sex;
   circulo(){
     x=random(0,width);
     y=random(0,height);
@@ -29,12 +28,10 @@ class circulo{
   }
   
   void draw(){
-    
     mover();
     noStroke();
     if(sex >= 1){
       fill(255,255,0);
-      sex = 0;
     }else{
       fill(0,255,0);
     }
